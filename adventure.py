@@ -44,6 +44,24 @@ class World:
         The given 'filename' is a string that gives name of text file
         in which location data is located.
         '''
+
+        file = open(filename,'r+') 
+        while True:
+       
+            file.readline() #get rid of START
+            id = file.readline()
+            #id = id.replace('\n','') #I think int() would work with whitespace, try it.
+            id  = int(id.replace('id:',''))
+            name = file.readline().replace('name:','')
+            desc = file.readline().replace('desc:','')
+            desc_d = file.readline().replace('desc_d:','')
+            file.readline() #get rid of END
+           
+            locations[id] = Location(id, name, desc, desc_d}
+            if end.endswith('***'):
+                break
+       
+        return locations
 		
 	
 	file.close()

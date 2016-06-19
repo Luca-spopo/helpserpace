@@ -1,7 +1,7 @@
 class Location:
     '''Class to represent each location in game world.'''
 
-    def __init__(self):
+    def __init__(self, id, name, bdesc, ldesc):
         '''Creates a new location.          
         
         Data that should be associated with each Location object:
@@ -21,21 +21,26 @@ class Location:
 
         # TODO: Add new attributes for this class here to store location data.
         # e.g. a list to store items available in location (store as Item objects)
+        self.id = id
+        self.name = name
+        self.bdesc = bdesc
+        self.ldesc = ldesc
         self.items = []
+        self.virgin = True;
 
     def get_brief_description (self):
         '''
         (Location) -> str
         Return str brief description of location.'''
         
-        pass
+        return self.bdesc
 
     def get_full_description (self):
         '''
         (Location) -> str
         Return str long description of location.'''
         
-        pass
+        pass #Take a guess.
 
     # TODO: Add other 'getter' methods as above for other location data as needed
 
